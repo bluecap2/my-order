@@ -1,0 +1,17 @@
+server:
+  port: 8082
+
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+      bindings:
+        input:
+          group: order
+          destination: shop
+          contentType: application/json
+        output:
+          destination: shop
+          contentType: application/json
